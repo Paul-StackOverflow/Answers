@@ -1,0 +1,33 @@
+﻿@model IEnumerable<FlightModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Default.cshtml";
+
+}
+
+<h2>Index</h2>
+
+@foreach (FlightModel Flight in Model)
+{
+    <div class="editor-field">
+                @Html.ListBox("Items", new SelectList(new List<string>() { "1", "2", "3", null, null }), "")
+    </div>
+
+    <div class="editor-field">
+        @Html.DropDownList("IDFLIGHT", new SelectList(Flight.IDFLIGHT), "")
+        @Html.ActionLink("Add New flight", "Create", "Flight", null, new { @style = "font-size:16px;", @class = "popup" })
+    </div>
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#IDTYPE").change(function () {
+            alert($('#IDTYPE').val());
+        });
+        $("#IDFLIGHT").change(function () {
+            alert($('#IDFLIGHT').val());
+        });
+    }
+    );
+
+</script>

@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Answers.master.cs" Inherits="ASPXAnswers.Answers" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script src="Scripts/jquery-2.1.4.min.js"></script>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="nav sidebar">
+            <ul id="navmenu" class="navmenu" runat="server">
+                <li runat="server" id="Home"><a id="Homelink" href="default.aspx">
+                    <h2>Home</h2>
+                </a></li>
+                <li id="linkonepage"><a id="link1" href="linkonepage.aspx">
+                    <h2>Link 1</h2>
+                </a></li>
+                <li id="linktwopage"><a id="link2" href="linktwopage.aspx">
+                    <h2>Link 2</h2>
+                </a></li>
+            </ul>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <script type="text/javascript">
+        $().ready(function () {
+            var href = document.location.href;
+            var lastPathSegment = href.substr(href.lastIndexOf('/') + 1).replace('.aspx', '').toLowerCase();
+            var v = $('#' + lastPathSegment);
+            if (v.length) {
+                v.attr('style', 'background: red;');
+            }
+        });
+    </script>
+</body>
+</html>
