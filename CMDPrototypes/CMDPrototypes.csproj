@@ -63,7 +63,6 @@
     <Compile Include="Ans34612672Files\Ans34883361.cs" />
     <Compile Include="Ans34612672Files\Ans_working.cs" />
     <Compile Include="Ans34612672Files\scoremanager.cs" />
-    <Compile Include="Ans34841196.cs" />
     <Compile Include="NotPostedEfforts\CodeTest.cs" />
     <Compile Include="NotPostedEfforts\Expectation.cs" />
     <Compile Include="NotPostedEfforts\PrintEvenNumbers.cs" />
