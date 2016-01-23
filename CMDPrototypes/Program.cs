@@ -10,6 +10,8 @@ namespace CMDPrototypes
     {
         static void Main(string[] args)
         {
+            Ans34612672 Ans34612672 = new Ans34612672();
+            Ans34612672.Execute();
             Ans34467714 Ans34467714 = new Ans34467714();
             Ans33716142 Ans33716142 = new Ans33716142();
             Ans33716142.Execute(args);
