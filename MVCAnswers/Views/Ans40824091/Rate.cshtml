@@ -1,0 +1,36 @@
+﻿
+@model MVCAnswers.Models.usuarioConectado
+
+
+@{
+    ViewBag.Title = "Ans40824091";
+    Layout = "~/Views/Shared/_Default.cshtml";
+}
+
+<h2>Ans40824091</h2>
+
+    @using (Html.BeginForm("Rate", "Ans40824091"))
+    {
+        <div class="form-group >
+            @Html.LabelFor(model => model.usuariostbl_id_list, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.usuariostbl_id_list, new SelectList(Model.usuariostbl_id_list, Model.usuariostbl_id_list), htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.usuariostbl_id, "", new { @class = "text-danger" })
+            </div>
+            @Html.LabelFor(model => model.recetastbl_id_list, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.recetastbl_id_list, new SelectList(Model.recetastbl_id_list, Model.recetastbl_id_list), htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.recetastbl_id_list, "", new { @class = "text-danger" })
+            </div>
+            @Html.LabelFor(model => model.valoracion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.valoracion, new SelectList(Model.valoracion, Model.valoracion), htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.valoracion, "", new { @class = "text-danger" })
+            </div>
+            <h2>Hidden:</h2>
+            <div class="col-md-10">
+                @Html.Hidden("username", Model.username)
+                @Html.Hidden("usuariostbl_id", Model.usuariostbl_id)
+            </div>
+            <input type="submit" name="submit" value="Submit" />
+    }

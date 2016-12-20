@@ -1,0 +1,51 @@
+﻿@model MVCAnswers.Models.Ans34536592
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Default.cshtml";
+}
+
+<h2>View</h2>
+@using (Html.BeginForm("Index", "Ans34536592", FormMethod.Post, new { id = "myForm" }))
+{
+    <fieldset>
+        <ul class="donate-now">
+            @*@for (int i = 0; i < Model.Count(); ++i)
+            {*@
+            <li>
+                @*@Html.RadioButtonFor(f => f.Operation, Model.Operation, null)@*//new { @Name = string.Format("{0},", Model.Operation), data_removeat = Model.Data_RemoveAt, @checked=false })*@
+                @*@Html.LabelFor(f => f.Operation)*@
+
+                Why my code wan't working:
+
+                so, what I was doing wrong here is that the data-val attribute for the radio buttons
+                were not getting set to 1, 2, 3, but to true.  so the mvc framework couldn't bind to the object because bool != enum
+
+
+                @Html.DisplayFor(model => model.Data_RemoveAt)
+                @Html.RadioButtonFor(model => model.Operation, "1")
+            </li>
+            <li>
+                @Html.DisplayFor(model => model.Data_RemoveAt)
+                @Html.RadioButtonFor(model => model.Operation, "2")
+            </li>
+            <li>
+                @Html.DisplayFor(model => model.Data_RemoveAt)
+                @Html.RadioButtonFor(model => model.Operation, "3")
+            </li>
+            @*}*@
+        </ul>
+    </fieldset>
+    <button type="submit">Submit</button>
+}
+
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        $('input[type="radio"]').click(function () {
+            var data_removeat = this.dataset.removeat;
+            this.checked = true;
+            $('#myForm').append('<input Name="RBSelected" type="text" value="' + data_removeat + '" />');
+            $("#myForm").submit();
+        });
+    });
+</script>*@
