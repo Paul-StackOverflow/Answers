@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <script src="Scripts/jquery-2.1.4.min.js"></script>
 <head runat="server">
+    <meta runat="server" property="og:image" name="og:image" content="mydomain.com/testing.jpeg" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
